@@ -63,7 +63,7 @@ exports.authenicateUser = async (req, res) => {
         if(user){
             if(await passwordEncryption.decryptPassword(req.body.userPassword, user.password)){
                 res.cookie('user', user.jwt);
-                res.status(200).send('Account Verified!, Moving to Home Page')
+                res.status(200).send('Welcome to chat app')
             }else{
                 res.status(401).send('Incorrect Email or Password')
             }
